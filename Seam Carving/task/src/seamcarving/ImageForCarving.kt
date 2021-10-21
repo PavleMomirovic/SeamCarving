@@ -1,20 +1,16 @@
 package seamcarving
 
-import com.sun.tools.jdeps.Graph
+
 import java.awt.Color
 import java.awt.image.BufferedImage
-import java.awt.image.IndexColorModel
-import java.io.File
-import java.lang.NullPointerException
-import java.util.*
 import kotlin.math.pow
 import kotlin.math.sqrt
 
 class ImageForCarving(private val im : BufferedImage) {
 
-    val intensityMat = Array<Array<Int>>(im.width) { Array<Int>(im.height) { 0 } }
+    private val intensityMat = Array<Array<Int>>(im.width) { Array<Int>(im.height) { 0 } }
 
-    fun pixelEnergy(x: Int, y: Int): Double {
+    private fun pixelEnergy(x: Int, y: Int): Double {
         var xm = x
         var ym = y
         if (xm == 0) xm++
@@ -64,9 +60,9 @@ class ImageForCarving(private val im : BufferedImage) {
         }
 
     }
-    val m = im.width
-    val n = im.height
-    val pq = PriorityQueue<Pixel>(m*n)
+    //val m = im.width
+    //val n = im.height
+    //val pq = PriorityQueue<Pixel>(m*n)
 
 
 
