@@ -31,13 +31,16 @@ fun drawDiagonals(im: BufferedImage) {
 fun main(args: Array<String>) {
     val fi = File(args[1])
     val fo = File(args[3])
+    val w = args[5].toInt()
+    val h = args[7].toInt()
 
     val image: BufferedImage = ImageIO.read(fi)
     val im = ImageForCarving(image)
-    im.makeIntensityMatrix()
-    ImageIO.write(im.markSeamHorizontal(), "png", fo)
-  /*  val ispr = Isprobavanje()
-    ispr.markSeam()
-    ispr.dodatneProvere()*/
+    im.removeSeamsVertical(w)
+    im.removeSeamsHorizontal(h)
+    ImageIO.write(im.getImage(), "png", fo)
+
+    //val image: BufferedImage = ImageIO.read(File("test.png"))
+
 }
 
