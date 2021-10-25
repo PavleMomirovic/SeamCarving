@@ -1,8 +1,8 @@
 # SeamCarving
-Not yet finished.
-For now what it can do is make a GrayScale photo based on one that you called a program for via CMD.
-Should be called with: -in test.png -out grayScaleTest.png
-Picture should be .png
+Program reduces the picture by removing least important pixels from it. It first calculates energy (importance) of each pixel, then based on that finds seams (horisontal and vertical) that are of lowest importance and deletes them. It will delete as many lowest seams as specifiend in the input.
 
-**Gray Scale is showing the importance of each pixel when it comes to compressing
-(whiter the pixel the more important it is, and the chances that it will get lost in compression are lower)
+input should be from cmd as following:
+java Main -in trees.png -out trees-reduced.png -width 100 -height 30
+
+
+Inside the ImageForCarving class you can also find grayScaleEnergyRepresentation function that was used for testing during the programming process. 
