@@ -34,6 +34,10 @@ fun main(args: Array<String>) {
 
     val image: BufferedImage = ImageIO.read(fi)
     val im = ImageForCarving(image)
-    ImageIO.write(im.grayScaleEnergyRepresentation(), "png", fo)
+    im.makeIntensityMatrix()
+    ImageIO.write(im.markSeamHorizontal(), "png", fo)
+  /*  val ispr = Isprobavanje()
+    ispr.markSeam()
+    ispr.dodatneProvere()*/
 }
 
